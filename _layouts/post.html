@@ -1,122 +1,104 @@
----
-layout: default
-body_class: post-template
----
-{% if page.image %}
-<div id="feature_image">
-  <div class="inner" style="background-image: url('{{ site.baseurl }}/content/images//{{ page.image }}')">
-    <img src='{{ site.baseurl }}/content/images/{{ page.image }}'>
-    </div>
-</div>
+<!DOCTYPE html>
+<html>
+<!--
+====================================================
+    __  ____  ______________  _______ ___    __ 
+   / / / /  |/  / ____/   \ \/ / ___//   |  / / 
+  / /_/ / /|_/ / /_  / /| |\  /\__ \/ /| | / /  
+ / __  / /  / / __/ / ___ |/ /___/ / ___ |/ /___
+/_/ /_/_/  /_/_/   /_/  |_/_//____/_/  |_/_____/
+                                                     
+====================================================
+Author: Hossain Mohammad Faysal
+Profile: https://www.facebook.com/hmfaysal
+Version: 1.0
+Description: Awesome dude, awesome life
+====================================================
+-->
+<head>
+{% include head.html %}
+{% if site.dropcap %}<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>{% endif %}
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+{% if page.imagefeature %}
+        <main id="notepad-post-container" class="notepad-post-container intro-effect-sliced" role="main">
+            <header class="notepad-post-header">
+                <div class="bg-img"></div>
+                
+                <div class="notepad-post-menu-header">
+{% else %}
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
 {% endif %}
+                    <a class="notepad-blog-logo" href="{{ site.url }}">
+                        <img src="{{ site.url }}/images/{{ site.logo }}" alt="Blog Logo" />
+                    </a>
 
-<article role="main" class="{% if page.image %}image{% endif %}">
-    <header>
-      <a href="{{ site.baseurl }}/" id="home_link">«</a>
-      <div class="meta"><time datetime="{{ page.date | date:'%Y-%m-%d' }}"><a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a></time>
-        <span class="count" id="js-reading-time">&nbsp;</span>
-      </div>
-      <h1>{{ page.title }}</h1>
-    </header>
-
-    <div class="text" id="js-post-content">
-        {{ content }}
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
     </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+{% for link in site.links %}
+            <li>{% if link.external %}
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                {% else %}
+                    <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                {% endif %} </li>
+{% endfor %}            
+           <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
 
-    <menu>
-      <a href="" id="btn_share" class="btn" title="Share">
-        <span aria-hidden="true" data-icon="S"></span>
-        <strong>Share</strong>
-      </a>
-      <a href="http://twitter.com/share?text={{ page.title | xml_encode }}&url={{ page.url prepend: site.baseurl }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
-        <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
-      </a>
-    </menu>
-
-
-    {% include footer.html %}
-
-</article>
-
-<div id="share_modal">
-    <div class="wrap">
-        <div class="inner">
-            <header>
-                Share
-                <a href="" class="close" title="Close">&times;</a>
-            </header>
-
-            <div class="roon-share-links">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-                <div id="fb-elems">
-                    <div id="fb-root"></div>
-                    <script>(function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s); js.id = id;
-                    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
-                    fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
-                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
-                </div>
-
-                <div id="pinit-btn">
-                    <a href="//pinterest.com/pin/create/button/?url={{ page.url |prepend: site.baseurl }}&amp;description={{ page.title | xml_encode }}-{{ site.title | xml_encode }} " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
-                    <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
+            </div>
+{% if page.imagefeature %}
+            <div class="notepad-post-title bg-check">
+                <h1>{{ page.title }}</h1>
+                <p>by <strong>{{ site.owner.name }}</strong> &#8212; {% assign tagsize = page.tags.size %}{% if tagsize != 0 %}on {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&comma;&nbsp;{% endunless %}{% endfor %}{% endif %} <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time></strong></p>
+            </div>
+            <div class="bg-img"></div>
+        </header>
+        <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
+        <img src="{{ site.url }}/images/{{ page.imagefeature }}" alt="cover-image" />
+{% else %}
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>{{ page.title }}</h1>
+                            <p>by <strong>{{ site.owner.name }}</strong> &#8212; {% assign tagsize = page.tags.size %}{% if tagsize != 0 %}on {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&comma;&nbsp;{% endunless %}{% endfor %}{% endif %} <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+{% endif %}
+        {% if page.imagefeature %}<article class="notepad-post-content post">{% else %}<article class="notepad-post-content post tag-simple">{% endif %}
+            <div>{{ content }}
+            </div>
+        </article>
+        <div class="cf"></div>
+{% if site.share %}{% include share.html %}{% endif %}
+        <div class="cf"></div>
+        
+{% include signoff.html %} 
+        
+        <div class="cf"></div>
+        {% if site.disqus_shortname and page.comments == true %}
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments</h1>
+        <div id="disqus_thread"></div>
+        {% include disqus_comments.html %}
+    </div>
+</section>
+{% endif %}
+        <div class="cf"></div>
 
-
-<script>
-window.onload = function () {
-  reading_time();
-}
-function get_text(el) {
-  ret = "";
-  var length = el.childNodes.length;
-  for(var i = 0; i < length; i++) {
-    var node = el.childNodes[i];
-    if(node.nodeType != 8) {
-      ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
-    }
-  }
-  return ret;
-}
-function reading_time () {
-  var post_content = document.getElementById('js-post-content');
-  if (post_content) {
-    var words = get_text(post_content),
-      count = words.split(/\s+/).length,
-    read_time = Math.ceil((count / 150)),
-        read_time_node = document.createTextNode(read_time + ' min read');
-    document.getElementById('js-reading-time').appendChild(read_time_node);
-  }
-}
-$(function(){
-  var share_modal = $("#share_modal"),
-  update_social_links = true;
-
-  $("#btn_share").click(function(){
-    var that = $(this);
-    share_modal.fadeIn(200);
-    return false;
-  });
-
-  share_modal.click(function(e){
-    if (e.target.className == "wrap" || e.target.id == "share_modal") {
-      share_modal.fadeOut(200);
-    }
-    return false;
-  });
-
-  share_modal.find("div.inner > header > a.close").click(function(){
-    share_modal.fadeOut(200);
-    return false;
-  });
-});
-</script>
+    {% include footer.html %} 
+</main>    
+{% include scripts.html %} 
+</body>
+</html>
