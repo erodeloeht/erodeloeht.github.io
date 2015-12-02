@@ -1,26 +1,42 @@
-title:            Scribble
-description:      A jekyll theme. Because I scribble.
-url:              # Site url.
-signoff:          # Your name.
-disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
-facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
-google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
+permalink   : /:categories/:year/:title/
+markdown    : kramdown
+highlighter : pygments
 
-links:
-  - name:         About
-    url:          /about
-  - name:         Blog
-    url:          http://theodorehsu.github.io
-    external:     true
-  - name:         Email
-    url:          mailto:xulisong731@gmail.com
-    external:     true
-  - name:         GitHub
-    url:          http://github.com/theodorehsu
-    external:     true
-highlighter:      pygments
-permalink:        pretty
-markdown:         redcarpet
-redcarpet:
-  extensions:
-    - smart
+paginate: 2 #6
+comments: true
+paginate_path: "/page/:num"
+
+source: source
+destination: _site
+sass:
+  sass_dir: _scss
+  style: compressed
+
+# Site settings
+title: Lora
+description: "A free Jekyll theme"
+email: your-email@domain.com
+baseurl: "" # the subpath of your site, e.g. /blog/
+#url: "http://yourdomain.com"
+url: "http://nandomoreira.me/lora"
+repository: "https://github.com/nandomoreirame/lora"
+disqus_shortname: "fernandomoreira"
+google_analytics: UA-52446115-1
+
+# social footer
+social:
+  github:
+    slug: github
+    link: http://github.com/nandomoreirame
+  facebook:
+    slug: facebook
+    link: http://facebook.com/fernando.dev
+  twitter:
+    slug: twitter
+    link: http://twitter.com/nandomoreirame
+  instagram:
+    slug: instagram
+    link: http://instagram.com/nandomoreira.me
+  linkedin:
+    slug: linkedin
+    link: http://linkedin.com/in/nandomoreirame
