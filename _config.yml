@@ -1,15 +1,55 @@
-# Site settings
-title: "Joon: Roon for Jekyll"
-logo: logo.png # image from https://www.flickr.com/photos/lwr/5496279831/in/set-72157594159055823
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Roon was an excellent service, with a beautiful understated design. Roon
-  was eventually acquired by Ghost, who awesomely chose to open source the theme.
-  <br/>This is my Jekyll port of the Roon theme
-url: "http://theodorehsu.github.io" # the base hostname & protocol for your site
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-twitter_username: jekyllrb
-github_username:  jekyll
+# Site Info
+title:              "The Plain"
+description:        "The Plain is a Minimalist Jekyll theme that focuses on writing matters."
+google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
+google_analytics:   UA-XXXXXXX-X # Put your Google Analytics code
 
-# Build settings
-markdown: kramdown
+# Author Info
+author_name:        "Heiswayi Nrird"
+author_email:       hnrird@gmail.com
+author_gravatar:    2b38b1b0e7e08b69379bd61582adf0c8 # Gravatar md5 hash
+twitter_username:   HeiswayiNrird
+
+# Site Settings
+baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
+permalink:          /notes/:title # Post permalink
+timezone:           America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Site Build
+highlighter:        pygments
+#markdown:           redcarpet
+#redcarpet:
+#    extensions:     ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "highlight", "footnotes"]
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+gems:
+  - jekyll-sitemap
+
+compress_html:
+    clippings:      all
+    ingore:
+        envs:       [ "test" ]
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"

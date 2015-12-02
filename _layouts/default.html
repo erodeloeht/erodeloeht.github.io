@@ -1,36 +1,31 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  {% include head.html %}
+	<head>
+		{% include head.html %}
+	</head>
 
-  <body class="{{ page.body_class }}">
+	<body>
 
-    {{ content }}
+		{% include header.html %}
 
-    {{ if site.logo}}
-    <a href="{{ site.baseurl | prepend: site.url }}" id="blog_badge">
-            <span style="background-image:
-            url('{{ site.baseurl }}/assets/images/{{ site.logo }}');">{{ site.name }}</span>
-        </a>
-    {{/if}}
+		<main>
+			{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
+		</main>
 
-    <script>
-      function no_schema_links () {
-        var links = document.querySelectorAll('.js-remove-domain-schema');
-        if (links) {
-          for (i = 0; i < links.length; ++i) {
-            var link = links[i],
-              text = link.innerHTML,
-            no_schema = text.replace(/.*?:\/\//g, "");
-            link.innerHTML = no_schema;
-          }
-        }
-      }
+		{% if page.path contains '_posts' %}
 
-      window.onload = function () {
-        no_schema_links();
-      }
-    </script>
-  </body>
+			{% if content contains 'reversefootnote' %}
+				<aside class="note"></aside>
+				<script async src="{{site.baseurl}}/assets/footnotes.js"></script>
+			{% endif %}
+
+		{% endif %}
+
+	</body>
 
 </html>
