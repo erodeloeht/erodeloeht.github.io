@@ -1,29 +1,25 @@
 ---
 layout: default
+body_class: page_template
+image: header.jpg
 ---
-<article class="post">
-
-  <div class="content">
-    <h2>
-      <a class="post-link"
-         href="{{ page.url | prepend: site.baseurl }}">
-        {{ page.title }}
-      </a>
-    </h2>
-
-    <div class="post-content">
-      {{ page.content }}
+{% if page.image %}
+<div id="feature_image">
+  <div class="inner" style="background-image: url('/content/images/{{ page.image }}')">
+    <img src='/content/images/{{ page.image }}'>
     </div>
+</div>
+{% endif %}
 
-    <div class="post-meta">
-      <div class="post-meta-data">
-        <i class="icon-pencil icon-large"></i>
-        {{ page.date | date: "%b %-d, %Y" }}
-      </div>
-    </div>
+<article role="main" class="{% if page.image %}image{% endif %}">
+  <header>
+    <a href="{{ site.baseurl }}/" id="home_link">«</a>
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <div class="text">
+    {{ content }}
   </div>
-
+  {% include footer.html %}
 </article>
-
-
 
