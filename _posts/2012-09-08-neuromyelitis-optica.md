@@ -1,5 +1,7 @@
+---
 Date: 2012-09-08 12:45
 Title: Neuromyelitis optica
+---
 
 This is bad, really really bad.
 

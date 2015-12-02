@@ -1,6 +1,8 @@
+---
 Date: 2012-09-26 11:45
 Title: Javascript Notes
 Published: false
+---
 
 
 ####Data types

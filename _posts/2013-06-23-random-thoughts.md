@@ -1,5 +1,7 @@
+---
 Date: 2013-06-23 22:30
 Title: Random thoughts
+---
 
 ![](https://dl.dropboxusercontent.com/u/914090/images/2013-06-23-random-thoughts.jpg) 
 

@@ -1,5 +1,7 @@
+---
 Date: 2012-12-17 22:04
 Title: Songs for J. M.
+---
 
 A playlist. Click [here](https://dl.dropbox.com/u/914090/Songs%20for%20J.M..zip) for download.
 <table>
