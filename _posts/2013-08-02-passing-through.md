@@ -5,6 +5,8 @@ Title: Passing through
 
 ![](https://dl.dropboxusercontent.com/u/914090/images/2014-06-21%2018.32.17.jpg) 
 
+> We appear and we disappear, and we’re important to some, but we’re just passing through. 
+
 我和小武站在阳台上，彼此赤裸，黑暗难辨，只听得远处池塘的蛙鸣，以及栖居在高大松树林中 owl 的低吟。夏夜的凉风清爽，让人冷不丁打一个冷颤。
 
 『我们应该去林中露营。』小武说。
@@ -35,4 +37,3 @@ Title: Passing through
 
 小武，你不知道其实记忆是可以永恒的。只是人生太过艰难，有些事就不要拆穿。
 
-> We appear and we disappear, and we’re important to some, but we’re just passing through. 
