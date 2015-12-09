@@ -3,7 +3,7 @@ Date: 2013-08-02 23:30
 Title: Passing through
 ---
 
-![](https://dl.dropboxusercontent.com/u/914090/images/2013-08-02-passing-through.jpg) 
+![](https://dl.dropboxusercontent.com/u/914090/images/2014-06-21%2018.32.17.jpg) 
 
 我和小武站在阳台上，彼此赤裸，黑暗难辨，只听得远处池塘的蛙鸣，以及栖居在高大松树林中 owl 的低吟。夏夜的凉风清爽，让人冷不丁打一个冷颤。
 
